@@ -10,4 +10,5 @@ export type RootStackParamList = {
   Home: NavigateParams
   ScrollView: NavigateParams
   DraggableFlatlist: NavigateParams
+  LanscapeView: NavigateParams
 }

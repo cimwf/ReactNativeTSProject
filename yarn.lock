@@ -1830,6 +1830,11 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.5.tgz#5f19d2b85a98e9558036f6a3cacc8819420f05cf"
   integrity sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==
 
+"@types/react-native-orientation@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@types/react-native-orientation/-/react-native-orientation-5.0.1.tgz#347f7041683249f9ca7386717aa4dd66b394d3fb"
+  integrity sha512-0Uvj73hXWXwxKISUSh8KDew9005D49NtbLJ/coldIMZNPhI+4obk2X6nzF3FBeIQ/2FbVUUZM6oMMIgQwPUJ2w==
+
 "@types/react-test-renderer@^18.0.0":
   version "18.0.0"
   resolved "https://registry.yarnpkg.com/@types/react-test-renderer/-/react-test-renderer-18.0.0.tgz#7b7f69ca98821ea5501b21ba24ea7b6139da2243"
@@ -2516,13 +2521,6 @@ cjs-module-lexer@^1.0.0:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/cjs-module-lexer/-/cjs-module-lexer-1.2.2.tgz#9f84ba3244a512f3a54e5277e8eef4c489864e40"
   integrity sha512-cOU9usZw8/dXIXKtwa8pM0OTJQuJkxMN6w30csNRUerHfeQ5R6U3kkU/FtJeIf3M202OHfY2U8ccInBG7/xogA==
-
-class-transformer-xyz@^0.1.14:
-  version "0.1.14"
-  resolved "https://registry.yarnpkg.com/class-transformer-xyz/-/class-transformer-xyz-0.1.14.tgz#55c38823eaefa46499d30221b803c676e57e8a74"
-  integrity sha512-BbHr7tkFIDXpOiVd0GxPx6KnDVF60K2JhzLpqbsBbIgMrU9HPZwTnyJLsRUmGzbejWYJkyHdXQGHH5qpwkn+HA==
-  dependencies:
-    user "0.0.0"
 
 class-utils@^0.3.5:
   version "0.3.6"
@@ -5849,10 +5847,10 @@ react-native-gradle-plugin@^0.71.17:
   resolved "https://registry.yarnpkg.com/react-native-gradle-plugin/-/react-native-gradle-plugin-0.71.17.tgz#cf780a27270f0a32dca8184eff91555d7627dd00"
   integrity sha512-OXXYgpISEqERwjSlaCiaQY6cTY5CH6j73gdkWpK0hedxtiWMWgH+i5TOi4hIGYitm9kQBeyDu+wim9fA8ROFJA==
 
-react-native-locktable@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/react-native-locktable/-/react-native-locktable-1.2.1.tgz#1c4ed27e23e157125a7b385469da8f4d1dc920fd"
-  integrity sha512-EnTMDW2G877CnOpFqhIMx+J/6Nd+SmTjad47i7G52qaiFOjJR7txdD9QF4uDY8Y+85b0CTICXFupjWZCdvmuXQ==
+react-native-orientation-locker@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/react-native-orientation-locker/-/react-native-orientation-locker-1.5.0.tgz#324853937eed4835ecd1c8613ab2206135d908ac"
+  integrity sha512-4XOCGmNN4BXg5JUFjUuXpsfhPJmbA3LkQilJO1ed+6vL97teTdG2w5IEevKiqL9/hPjeWE8YYtX/YW+yp53hkg==
 
 react-native-reanimated@^3.0.2:
   version "3.0.2"
@@ -6891,11 +6889,6 @@ use@^3.1.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/use/-/use-3.1.1.tgz#d50c8cac79a19fbc20f2911f56eb973f4e10070f"
   integrity sha512-cwESVXlO3url9YWlFW/TA9cshCEhtu7IKJ/p5soJ/gGpj7vbvFrAY/eIioQ6Dw23KjZhYgiIo8HOs1nQ2vr/oQ==
-
-user@0.0.0:
-  version "0.0.0"
-  resolved "https://registry.yarnpkg.com/user/-/user-0.0.0.tgz#f27f1b23fc511f2a8efa40db55cfba123824e02a"
-  integrity sha512-eRNM5isOvr6aEFAGi1CqAkmLkYxW2NJ5ThhbD+6IJXYKM1mo7Gtxx4mQIveHz/5K3p/SVnlW9k17ETn+QAu8IQ==
 
 util-deprecate@^1.0.1, util-deprecate@~1.0.1:
   version "1.0.2"

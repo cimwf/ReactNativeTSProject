@@ -33,6 +33,19 @@ const Home = ({ navigation }: PropsRoute) => {
       >
         <Text>DraggableFlatlist</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={{
+          height: 50,
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: 'cyan',
+        }}
+        onPress={() => {
+          navigation.navigate('LanscapeView', {})
+        }}
+      >
+        <Text>LanscapeView</Text>
+      </TouchableOpacity>
     </View>
   )
 }
