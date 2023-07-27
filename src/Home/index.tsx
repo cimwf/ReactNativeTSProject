@@ -46,6 +46,32 @@ const Home = ({ navigation }: PropsRoute) => {
       >
         <Text>LanscapeView</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={{
+          height: 50,
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: '#ad5ff9',
+        }}
+        onPress={() => {
+          navigation.navigate('OnceLogin', {})
+        }}
+      >
+        <Text>OnceLogin</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={{
+          height: 50,
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: '#fefbdc',
+        }}
+        onPress={() => {
+          navigation.navigate('TextInputEx', {})
+        }}
+      >
+        <Text>TextInputEx</Text>
+      </TouchableOpacity>
     </View>
   )
 }
