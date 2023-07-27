@@ -7,6 +7,7 @@ import DraggableFlatlist from './DraggableFlatlist'
 import LanscapeView from './Landscape'
 import OnceLogin from './OnceLogin'
 import TextInputEx from './TextInputEx'
+import CalendarManager from './CalendarManager'
 import { RootStackParamList } from './Types/router'
 
 const Stack = createNativeStackNavigator<RootStackParamList>()
@@ -21,6 +22,7 @@ function App(): JSX.Element {
         <Stack.Screen name={'LanscapeView'} component={LanscapeView} />
         <Stack.Screen name={'OnceLogin'} component={OnceLogin} />
         <Stack.Screen name={'TextInputEx'} component={TextInputEx} />
+        <Stack.Screen name={'CalendarManager'} component={CalendarManager} />
       </Stack.Navigator>
     </NavigationContainer>
   )

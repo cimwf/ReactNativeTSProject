@@ -72,6 +72,19 @@ const Home = ({ navigation }: PropsRoute) => {
       >
         <Text>TextInputEx</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={{
+          height: 50,
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: 'chartreuse',
+        }}
+        onPress={() => {
+          navigation.navigate('CalendarManager', {})
+        }}
+      >
+        <Text>CalendarManager</Text>
+      </TouchableOpacity>
     </View>
   )
 }

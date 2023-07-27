@@ -13,4 +13,5 @@ export type RootStackParamList = {
   LanscapeView: NavigateParams
   OnceLogin: NavigateParams
   TextInputEx: NavigateParams
+  CalendarManager: NavigateParams
 }
