@@ -1,5 +1,6 @@
 import React from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View } from 'react-native'
+import TouchableButton from './CommonButton'
 import type { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { RootStackParamList } from '../Types/router'
 
@@ -7,84 +8,41 @@ type PropsRoute = NativeStackScreenProps<RootStackParamList, 'Home', 'Stack'>
 const Home = ({ navigation }: PropsRoute) => {
   return (
     <View style={{ flex: 1 }}>
-      <TouchableOpacity
-        style={{
-          height: 50,
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: 'pink',
-        }}
-        onPress={() => {
-          navigation.navigate('ScrollView', {})
-        }}
-      >
-        <Text>scrollView</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={{
-          height: 50,
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: 'orange',
-        }}
-        onPress={() => {
-          navigation.navigate('DraggableFlatlist', {})
-        }}
-      >
-        <Text>DraggableFlatlist</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={{
-          height: 50,
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: 'cyan',
-        }}
-        onPress={() => {
-          navigation.navigate('LanscapeView', {})
-        }}
-      >
-        <Text>LanscapeView</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={{
-          height: 50,
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: '#ad5ff9',
-        }}
-        onPress={() => {
-          navigation.navigate('OnceLogin', {})
-        }}
-      >
-        <Text>OnceLogin</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={{
-          height: 50,
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: '#fefbdc',
-        }}
-        onPress={() => {
-          navigation.navigate('TextInputEx', {})
-        }}
-      >
-        <Text>TextInputEx</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={{
-          height: 50,
-          justifyContent: 'center',
-          alignItems: 'center',
-          backgroundColor: 'chartreuse',
-        }}
-        onPress={() => {
-          navigation.navigate('CalendarManager', {})
-        }}
-      >
-        <Text>CalendarManager</Text>
-      </TouchableOpacity>
+      <TouchableButton
+        title={'ScrollView'}
+        color={'pink'}
+        onPress={() => navigation.navigate('ScrollView', {})}
+      />
+      <TouchableButton
+        title={'DraggableFlatlist'}
+        color={'orange'}
+        onPress={() => navigation.navigate('DraggableFlatlist', {})}
+      />
+      <TouchableButton
+        title={'LanscapeView'}
+        color={'cyan'}
+        onPress={() => navigation.navigate('LanscapeView', {})}
+      />
+      <TouchableButton
+        title={'OnceLogin'}
+        color={'#ad5ff9'}
+        onPress={() => navigation.navigate('OnceLogin', {})}
+      />
+      <TouchableButton
+        title={'TextInputEx'}
+        color={'#fefbdc'}
+        onPress={() => navigation.navigate('TextInputEx', {})}
+      />
+      <TouchableButton
+        title={'CalendarManager-ios'}
+        color={'chartreuse'}
+        onPress={() => navigation.navigate('CalendarManager', {})}
+      />
+      <TouchableButton
+        title={'ToastModule-android'}
+        color={'deeppink'}
+        onPress={() => navigation.navigate('ToastModule', {})}
+      />
     </View>
   )
 }

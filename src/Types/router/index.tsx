@@ -14,4 +14,5 @@ export type RootStackParamList = {
   OnceLogin: NavigateParams
   TextInputEx: NavigateParams
   CalendarManager: NavigateParams
+  ToastModule: NavigateParams
 }
