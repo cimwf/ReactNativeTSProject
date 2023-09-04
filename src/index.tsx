@@ -9,7 +9,11 @@ import OnceLogin from './OnceLogin'
 import TextInputEx from './TextInputEx'
 import CalendarManager from './CalendarManager'
 import ToastModule from './ToastModule'
+import SwiperView from './SwiperView'
+import PDFComponent from './PDF'
+import EchartsCom from './Echarts'
 import { RootStackParamList } from './Types/router'
+// import 'index.d.ts'
 
 const Stack = createNativeStackNavigator<RootStackParamList>()
 
@@ -25,6 +29,9 @@ function App(): JSX.Element {
         <Stack.Screen name={'TextInputEx'} component={TextInputEx} />
         <Stack.Screen name={'CalendarManager'} component={CalendarManager} />
         <Stack.Screen name={'ToastModule'} component={ToastModule} />
+        <Stack.Screen name={'SwiperView'} component={SwiperView} />
+        <Stack.Screen name={'PDFComponent'} component={PDFComponent} />
+        <Stack.Screen name={'EchartsCom'} component={EchartsCom} />
       </Stack.Navigator>
     </NavigationContainer>
   )

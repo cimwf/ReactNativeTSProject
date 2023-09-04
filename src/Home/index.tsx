@@ -43,6 +43,21 @@ const Home = ({ navigation }: PropsRoute) => {
         color={'deeppink'}
         onPress={() => navigation.navigate('ToastModule', {})}
       />
+      <TouchableButton
+        title={'SwiperView'}
+        color={'lightsalmon'}
+        onPress={() => navigation.navigate('SwiperView', {})}
+      />
+      <TouchableButton
+        title={'PDFComponent'}
+        color={'darkseagreen'}
+        onPress={() => navigation.navigate('PDFComponent', {})}
+      />
+      <TouchableButton
+        title={'EchartsCom'}
+        color={'pink'}
+        onPress={() => navigation.navigate('EchartsCom', {})}
+      />
     </View>
   )
 }

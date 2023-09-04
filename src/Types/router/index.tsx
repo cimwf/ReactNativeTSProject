@@ -15,4 +15,7 @@ export type RootStackParamList = {
   TextInputEx: NavigateParams
   CalendarManager: NavigateParams
   ToastModule: NavigateParams
+  SwiperView: NavigateParams
+  PDFComponent: NavigateParams
+  EchartsCom: NavigateParams
 }
