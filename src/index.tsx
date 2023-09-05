@@ -12,8 +12,8 @@ import ToastModule from './ToastModule'
 import SwiperView from './SwiperView'
 import PDFComponent from './PDF'
 import EchartsCom from './Echarts'
+import DatePickerCom from './DatePicker'
 import { RootStackParamList } from './Types/router'
-// import 'index.d.ts'
 
 const Stack = createNativeStackNavigator<RootStackParamList>()
 
@@ -32,6 +32,7 @@ function App(): JSX.Element {
         <Stack.Screen name={'SwiperView'} component={SwiperView} />
         <Stack.Screen name={'PDFComponent'} component={PDFComponent} />
         <Stack.Screen name={'EchartsCom'} component={EchartsCom} />
+        <Stack.Screen name={'DatePickerCom'} component={DatePickerCom} />
       </Stack.Navigator>
     </NavigationContainer>
   )

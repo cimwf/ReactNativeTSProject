@@ -58,6 +58,11 @@ const Home = ({ navigation }: PropsRoute) => {
         color={'pink'}
         onPress={() => navigation.navigate('EchartsCom', {})}
       />
+      <TouchableButton
+        title={'DatePickerCom'}
+        color={'orange'}
+        onPress={() => navigation.navigate('DatePickerCom', {})}
+      />
     </View>
   )
 }

@@ -18,4 +18,5 @@ export type RootStackParamList = {
   SwiperView: NavigateParams
   PDFComponent: NavigateParams
   EchartsCom: NavigateParams
+  DatePickerCom: NavigateParams
 }
