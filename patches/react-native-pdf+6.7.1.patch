@@ -1,0 +1,89 @@
+diff --git a/node_modules/react-native-pdf/index.js b/node_modules/react-native-pdf/index.js
+index 05ec114..75bbb1f 100644
+--- a/node_modules/react-native-pdf/index.js
++++ b/node_modules/react-native-pdf/index.js
+@@ -19,7 +19,7 @@ import {
+ import PdfViewNativeComponent, {
+     Commands as PdfViewCommands,
+   } from './fabric/RNPDFPdfNativeComponent';
+-import ReactNativeBlobUtil from 'react-native-blob-util'
++import ReactNativeFetchBlob from 'rn-fetch-blob'
+ import {ViewPropTypes} from 'deprecated-react-native-prop-types';
+ const SHA1 = require('crypto-js/sha1');
+ import PdfView from './PdfView';
+@@ -162,10 +162,10 @@ export default class Pdf extends Component {
+             this.setState({isDownloaded: false, path: '', progress: 0});
+         }
+         const filename = source.cacheFileName || SHA1(uri) + '.pdf';
+-        const cacheFile = ReactNativeBlobUtil.fs.dirs.CacheDir + '/' + filename;
++        const cacheFile = ReactNativeFetchBlob.fs.dirs.CacheDir + '/' + filename;
+ 
+         if (source.cache) {
+-            ReactNativeBlobUtil.fs
++            ReactNativeFetchBlob.fs
+                 .stat(cacheFile)
+                 .then(stats => {
+                     if (!Boolean(source.expiration) || (source.expiration * 1000 + stats.lastModified) > (new Date().getTime())) {
+@@ -197,7 +197,7 @@ export default class Pdf extends Component {
+                 const isBase64 = !!(uri && uri.match(/^data:application\/pdf;base64/));
+ 
+                 const filename = source.cacheFileName || SHA1(uri) + '.pdf';
+-                const cacheFile = ReactNativeBlobUtil.fs.dirs.CacheDir + '/' + filename;
++                const cacheFile = ReactNativeFetchBlob.fs.dirs.CacheDir + '/' + filename;
+ 
+                 // delete old cache file
+                 this._unlinkFile(cacheFile);
+@@ -205,7 +205,7 @@ export default class Pdf extends Component {
+                 if (isNetwork) {
+                     this._downloadFile(source, cacheFile);
+                 } else if (isAsset) {
+-                    ReactNativeBlobUtil.fs
++                    ReactNativeFetchBlob.fs
+                         .cp(uri, cacheFile)
+                         .then(() => {
+                             if (this._mounted) {
+@@ -218,7 +218,7 @@ export default class Pdf extends Component {
+                         })
+                 } else if (isBase64) {
+                     let data = uri.replace(/data:application\/pdf;base64,/i, '');
+-                    ReactNativeBlobUtil.fs
++                    ReactNativeFetchBlob.fs
+                         .writeFile(cacheFile, data, 'base64')
+                         .then(() => {
+                             if (this._mounted) {
+@@ -258,7 +258,7 @@ export default class Pdf extends Component {
+         const tempCacheFile = cacheFile + '.tmp';
+         this._unlinkFile(tempCacheFile);
+ 
+-        this.lastRNBFTask = ReactNativeBlobUtil.config({
++        this.lastRNBFTask = ReactNativeFetchBlob.config({
+             // response data will be saved to this path if it has access right.
+             path: tempCacheFile,
+             trusty: this.props.trustAllCerts,
+@@ -287,7 +287,7 @@ export default class Pdf extends Component {
+                     let actualContentLength;
+ 
+                     try {
+-                        const fileStats = await ReactNativeBlobUtil.fs.stat(res.path());
++                        const fileStats = await ReactNativeFetchBlob.fs.stat(res.path());
+ 
+                         if (!fileStats || !fileStats.size) {
+                             throw new Error("FileNotFound:" + source.uri);
+@@ -304,7 +304,7 @@ export default class Pdf extends Component {
+                 }
+ 
+                 this._unlinkFile(cacheFile);
+-                ReactNativeBlobUtil.fs
++                ReactNativeFetchBlob.fs
+                     .cp(tempCacheFile, cacheFile)
+                     .then(() => {
+                         if (this._mounted) {
+@@ -326,7 +326,7 @@ export default class Pdf extends Component {
+ 
+     _unlinkFile = async (file) => {
+         try {
+-            await ReactNativeBlobUtil.fs.unlink(file);
++            await ReactNativeFetchBlob.fs.unlink(file);
+         } catch (e) {
+ 
+         }
