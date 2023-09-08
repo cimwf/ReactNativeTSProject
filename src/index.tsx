@@ -13,6 +13,7 @@ import SwiperView from './SwiperView'
 import PDFComponent from './PDF'
 import EchartsCom from './Echarts'
 import DatePickerCom from './DatePicker'
+import SnapCarousel from './SnapCarousel'
 import { RootStackParamList } from './Types/router'
 
 const Stack = createNativeStackNavigator<RootStackParamList>()
@@ -33,6 +34,7 @@ function App(): JSX.Element {
         <Stack.Screen name={'PDFComponent'} component={PDFComponent} />
         <Stack.Screen name={'EchartsCom'} component={EchartsCom} />
         <Stack.Screen name={'DatePickerCom'} component={DatePickerCom} />
+        <Stack.Screen name={'SnapCarousel'} component={SnapCarousel} />
       </Stack.Navigator>
     </NavigationContainer>
   )

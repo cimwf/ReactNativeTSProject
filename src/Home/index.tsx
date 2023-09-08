@@ -63,6 +63,11 @@ const Home = ({ navigation }: PropsRoute) => {
         color={'orange'}
         onPress={() => navigation.navigate('DatePickerCom', {})}
       />
+      <TouchableButton
+        title={'SnapCarousel'}
+        color={'cyan'}
+        onPress={() => navigation.navigate('SnapCarousel', {})}
+      />
     </View>
   )
 }

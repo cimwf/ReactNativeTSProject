@@ -19,4 +19,5 @@ export type RootStackParamList = {
   PDFComponent: NavigateParams
   EchartsCom: NavigateParams
   DatePickerCom: NavigateParams
+  SnapCarousel: NavigateParams
 }
