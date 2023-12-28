@@ -48,11 +48,11 @@ const Home = ({ navigation }: PropsRoute) => {
         color={'lightsalmon'}
         onPress={() => navigation.navigate('SwiperView', {})}
       />
-      <TouchableButton
+      {/* <TouchableButton
         title={'PDFComponent'}
         color={'darkseagreen'}
         onPress={() => navigation.navigate('PDFComponent', {})}
-      />
+      /> */}
       <TouchableButton
         title={'EchartsCom'}
         color={'pink'}
@@ -67,6 +67,26 @@ const Home = ({ navigation }: PropsRoute) => {
         title={'SnapCarousel'}
         color={'cyan'}
         onPress={() => navigation.navigate('SnapCarousel', {})}
+      />
+      <TouchableButton
+        title={'ShadowView'}
+        color={'#ad5ff9'}
+        onPress={() => navigation.navigate('ShadowView', {})}
+      />
+      <TouchableButton
+        title={'GestureView'}
+        color={'#fefbdc'}
+        onPress={() => navigation.navigate('GestureView', {})}
+      />
+      <TouchableButton
+        title={'Trtc'}
+        color={'chartreuse'}
+        onPress={() => navigation.navigate('Trtc', {})}
+      />
+      <TouchableButton
+        title={'IMView'}
+        color={'deeppink'}
+        onPress={() => navigation.navigate('IMView', {})}
       />
     </View>
   )

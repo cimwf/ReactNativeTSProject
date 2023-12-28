@@ -20,4 +20,16 @@ export type RootStackParamList = {
   EchartsCom: NavigateParams
   DatePickerCom: NavigateParams
   SnapCarousel: NavigateParams
+  ShadowView: NavigateParams
+  GestureView: NavigateParams
+  Trtc: NavigateParams
+  // IMViewContainer: NavigateParams
+  IMView: NavigateParams
+}
+
+export type IMStackParamList = {
+  // IMView: NavigateParams
+  IMHomeScreen: NavigateParams
+  IMUserScreen: NavigateParams
+  IMDetailsScreen: NavigateParams
 }
