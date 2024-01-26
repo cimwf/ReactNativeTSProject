@@ -25,6 +25,7 @@ export type RootStackParamList = {
   Trtc: NavigateParams
   // IMViewContainer: NavigateParams
   IMView: NavigateParams
+  SafetyKeyboard: NavigateParams
 }
 
 export type IMStackParamList = {

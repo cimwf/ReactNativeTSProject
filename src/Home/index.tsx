@@ -88,6 +88,11 @@ const Home = ({ navigation }: PropsRoute) => {
         color={'deeppink'}
         onPress={() => navigation.navigate('IMView', {})}
       />
+      <TouchableButton
+        title={'SafetyKeyboard'}
+        color={'lightsalmon'}
+        onPress={() => navigation.navigate('SafetyKeyboard', {})}
+      />
     </View>
   )
 }

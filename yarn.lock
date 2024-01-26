@@ -2866,7 +2866,7 @@ cosmiconfig@^5.0.5, cosmiconfig@^5.1.0:
     js-yaml "^3.13.1"
     parse-json "^4.0.0"
 
-create-react-class@^15.6.2:
+create-react-class@^15.5.4, create-react-class@^15.6.2:
   version "15.7.0"
   resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.7.0.tgz#7499d7ca2e69bb51d13faf59bd04f0c65a1d6c1e"
   integrity sha512-QZv4sFWG9S5RUvkTYWbflxeZX+JG7Cz0Tn33rQBJ+WFQTqTfUTjMjiv9tnfXazjsO5r0KhPs+AqCjyrQX6h2ng==
@@ -6357,6 +6357,11 @@ react-native-date-picker@^4.2.14:
   dependencies:
     prop-types "^15.8.1"
 
+react-native-device-info@^10.12.0:
+  version "10.12.0"
+  resolved "https://registry.yarnpkg.com/react-native-device-info/-/react-native-device-info-10.12.0.tgz#be4e71cbcc9a05e8643b1a419a4450d4cef9bbcc"
+  integrity sha512-gnBkjyZNEqRd+5BNrdzuvmlraHTCH/to2x0Gp9rtDt0O9xWWW1MTYohUVWX9A0Ad2HVYcGanDCIvjWp4ngMZFg==
+
 react-native-draggable-flatlist@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/react-native-draggable-flatlist/-/react-native-draggable-flatlist-4.0.1.tgz#2f027d387ba4b8f3eb0907340e32cb85e6460df2"
@@ -6446,6 +6451,13 @@ react-native-storage@^1.0.1:
   dependencies:
     opencollective "^1.0.3"
     opencollective-postinstall "^2.0.2"
+
+react-native-supervons-custom-keyboard@^1.4.6:
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/react-native-supervons-custom-keyboard/-/react-native-supervons-custom-keyboard-1.4.6.tgz#9238466d5df23dfc3831391e9ba52721300751a8"
+  integrity sha512-ZsTZOW6++VG1xpl2OiUitW0tjfQAaeXRZoO6Kl2DZnJog6cc6E5W/CKki2UqUhsGaK6uVaZlXJ+TMoDggUfv0g==
+  dependencies:
+    create-react-class "^15.5.4"
 
 react-native-svg@^14.1.0:
   version "14.1.0"

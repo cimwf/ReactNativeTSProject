@@ -1,8 +1,14 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { View, Text } from 'react-native'
 import ScrollViewToTop from './scrollView'
+import DeviceInfo from 'react-native-device-info'
 
 const ScrollViewCom = () => {
+
+  useEffect(() => {
+    const iphoneModel = DeviceInfo.getModel()
+    console.log('iphoneModel', iphoneModel)
+  }, [])
   return (
     <View>
       <ScrollViewToTop stickyHeaderIndices={[1]}>
