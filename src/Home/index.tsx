@@ -1,5 +1,5 @@
 import React from 'react'
-import { View } from 'react-native'
+import { ScrollView } from 'react-native'
 import TouchableButton from './CommonButton'
 import type { NativeStackScreenProps } from '@react-navigation/native-stack'
 import { RootStackParamList } from '../Types/router'
@@ -7,7 +7,7 @@ import { RootStackParamList } from '../Types/router'
 type PropsRoute = NativeStackScreenProps<RootStackParamList, 'Home', 'Stack'>
 const Home = ({ navigation }: PropsRoute) => {
   return (
-    <View style={{ flex: 1 }}>
+    <ScrollView style={{ flex: 1 }}>
       <TouchableButton
         title={'ScrollView'}
         color={'pink'}
@@ -93,7 +93,7 @@ const Home = ({ navigation }: PropsRoute) => {
         color={'lightsalmon'}
         onPress={() => navigation.navigate('SafetyKeyboard', {})}
       />
-    </View>
+    </ScrollView>
   )
 }
 

@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import { View, Text } from 'react-native'
 import ScrollViewToTop from './scrollView'
 import DeviceInfo from 'react-native-device-info'
+import TianYan from '@webank/wt-console'
 
 const ScrollViewCom = () => {
 
@@ -11,6 +12,7 @@ const ScrollViewCom = () => {
   }, [])
   return (
     <View>
+      <TianYan />
       <ScrollViewToTop stickyHeaderIndices={[1]}>
         <View style={{ height: 50, backgroundColor: 'pink' }} />
         <View style={{ height: 500, backgroundColor: 'yellow' }}>

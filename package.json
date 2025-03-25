@@ -21,6 +21,7 @@
     "@types/crypto-js": "^4.1.1",
     "@types/react-native-orientation": "^5.0.1",
     "@types/react-native-snap-carousel": "^3.8.5",
+    "@webank/wt-console": "^1.4.2",
     "crypto-js": "^4.1.1",
     "native-echarts": "^0.5.0",
     "patch-package": "^8.0.0",
