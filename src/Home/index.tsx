@@ -93,6 +93,11 @@ const Home = ({ navigation }: PropsRoute) => {
         color={'lightsalmon'}
         onPress={() => navigation.navigate('SafetyKeyboard', {})}
       />
+      <TouchableButton
+        title={'BdAsr'}
+        color={'darkseagreen'}
+        onPress={() => navigation.navigate('BdAsr', {})}
+      />
     </ScrollView>
   )
 }
