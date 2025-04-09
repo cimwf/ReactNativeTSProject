@@ -5,6 +5,7 @@ const calendarManagerEmitter = new NativeEventEmitter(NativeModules.CalendarMana
 
 const CalendarManager = () => {
   useEffect(() => {
+    console.log(NativeModules.CalendarManagerModule)
     calendarManagerEmitter.addListener('EventReminder', name => {
       console.log('guanshan-----event')
       console.log(name)

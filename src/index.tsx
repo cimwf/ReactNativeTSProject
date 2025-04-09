@@ -23,6 +23,7 @@ import HomeScreen from './IM/pages/Home'
 import UserScreen from './IM/pages/User'
 import DetailsScreen from './IM/pages/Details'
 import SafetyKeyboard from './SafetyKeyboard'
+import BdAsr from './BdAsr'
 
 const Stack = createNativeStackNavigator<RootStackParamList>()
 const IMStack = createNativeStackNavigator<IMStackParamList>()
@@ -50,6 +51,7 @@ function App(): JSX.Element {
         {/* <Stack.Screen name={'IMViewContainer'} component={IMViewContainer} /> */}
         <Stack.Screen name={'IMView'} component={IMView} />
         <Stack.Screen name={'SafetyKeyboard'} component={SafetyKeyboard} />
+        <Stack.Screen name={'BdAsr'} component={BdAsr} />
       </Stack.Navigator>
     </NavigationContainer>
   )

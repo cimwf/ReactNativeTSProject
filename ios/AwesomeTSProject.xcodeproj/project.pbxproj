@@ -12,6 +12,26 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		548FBB1B2D9E5EAA00D70F2D /* 16k_test.pcm in Resources */ = {isa = PBXBuildFile; fileRef = 548FBB162D9E5EAA00D70F2D /* 16k_test.pcm */; };
+		548FBB2B2D9E5EAA00D70F2D /* 8k_test.pcm in Resources */ = {isa = PBXBuildFile; fileRef = 548FBB152D9E5EAA00D70F2D /* 8k_test.pcm */; };
+		548FBB502D9E5F8100D70F2D /* ASRModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 548FBB4F2D9E5F8100D70F2D /* ASRModule.m */; };
+		548FBB522D9E60BA00D70F2D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 548FBB512D9E60BA00D70F2D /* libsqlite3.tbd */; };
+		548FBB542D9E619400D70F2D /* bds_easr_basic_model.dat in Resources */ = {isa = PBXBuildFile; fileRef = 548FBB532D9E619400D70F2D /* bds_easr_basic_model.dat */; };
+		548FBB562D9E625100D70F2D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548FBB552D9E625100D70F2D /* CFNetwork.framework */; };
+		548FBB582D9E62AB00D70F2D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548FBB572D9E62AB00D70F2D /* SystemConfiguration.framework */; };
+		548FBB5A2D9E62EB00D70F2D /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548FBB592D9E62EB00D70F2D /* CoreTelephony.framework */; };
+		548FBB5C2D9E637D00D70F2D /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 548FBB5B2D9E637D00D70F2D /* libc++.tbd */; };
+		548FBB5E2D9E638D00D70F2D /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 548FBB5D2D9E638D00D70F2D /* libz.1.2.5.tbd */; };
+		548FBB602D9E645E00D70F2D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548FBB5F2D9E645E00D70F2D /* AudioToolbox.framework */; };
+		548FBB622D9E646800D70F2D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548FBB612D9E646800D70F2D /* AVFoundation.framework */; };
+		548FBB642D9E647A00D70F2D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548FBB632D9E647A00D70F2D /* CoreLocation.framework */; };
+		548FBB662D9E648000D70F2D /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548FBB652D9E648000D70F2D /* GLKit.framework */; };
+		548FBB682D9E72F600D70F2D /* WakeUp.bin in Resources */ = {isa = PBXBuildFile; fileRef = 548FBB672D9E72F600D70F2D /* WakeUp.bin */; };
+		548FBB6A2D9E77D500D70F2D /* bds_easr_wakeup_words.dat in Resources */ = {isa = PBXBuildFile; fileRef = 548FBB692D9E77D500D70F2D /* bds_easr_wakeup_words.dat */; };
+		548FBBB02DA6171500D70F2D /* BDSpeechModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 548FBBAC2DA6171500D70F2D /* BDSpeechModule.m */; };
+		548FBBB22DA6188F00D70F2D /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 548FBBB12DA6188F00D70F2D /* libiconv.tbd */; };
+		548FBBB82DA643A900D70F2D /* libBaiduSpeechSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 548FBBB72DA643A900D70F2D /* libBaiduSpeechSDK.a */; };
+		548FBBBA2DA643D700D70F2D /* libBaiduASRSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 548FBBB92DA643D700D70F2D /* libBaiduASRSDK.a */; };
 		54B5B0582A72110B00E76628 /* CalendarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 54B5B0572A72110B00E76628 /* CalendarManager.m */; };
 		54C5CFFA2B3560AD004DE37B /* TXFFmpeg.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C5CFF92B3560AD004DE37B /* TXFFmpeg.xcframework */; };
 		54C5CFFC2B3560D4004DE37B /* TXSoundTouch.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C5CFFB2B3560D4004DE37B /* TXSoundTouch.xcframework */; };
@@ -41,6 +61,44 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = AwesomeTSProject/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-AwesomeTSProject-AwesomeTSProjectTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AwesomeTSProject-AwesomeTSProjectTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4392A12AC88292D35C810B /* Pods-AwesomeTSProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeTSProject.debug.xcconfig"; path = "Target Support Files/Pods-AwesomeTSProject/Pods-AwesomeTSProject.debug.xcconfig"; sourceTree = "<group>"; };
+		548FBAF12D9E5EAA00D70F2D /* BDRecognizerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDRecognizerViewController.h; sourceTree = "<group>"; };
+		548FBAF22D9E5EAA00D70F2D /* BDRecognizerViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDRecognizerViewDelegate.h; sourceTree = "<group>"; };
+		548FBAF32D9E5EAA00D70F2D /* BDRecognizerViewParamsObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDRecognizerViewParamsObject.h; sourceTree = "<group>"; };
+		548FBAF42D9E5EAA00D70F2D /* BDTheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDTheme.h; sourceTree = "<group>"; };
+		548FBAF72D9E5EAA00D70F2D /* BDSASRDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSASRDefines.h; sourceTree = "<group>"; };
+		548FBAF82D9E5EAA00D70F2D /* BDSASRParameters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSASRParameters.h; sourceTree = "<group>"; };
+		548FBAF92D9E5EAA00D70F2D /* BDSEventManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSEventManager.h; sourceTree = "<group>"; };
+		548FBAFA2D9E5EAA00D70F2D /* BDSUploaderDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSUploaderDefines.h; sourceTree = "<group>"; };
+		548FBAFB2D9E5EAA00D70F2D /* BDSUploaderParameters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSUploaderParameters.h; sourceTree = "<group>"; };
+		548FBAFC2D9E5EAA00D70F2D /* BDSWakeupDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSWakeupDefines.h; sourceTree = "<group>"; };
+		548FBAFD2D9E5EAA00D70F2D /* BDSWakeupParameters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSWakeupParameters.h; sourceTree = "<group>"; };
+		548FBB152D9E5EAA00D70F2D /* 8k_test.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8k_test.pcm; sourceTree = "<group>"; };
+		548FBB162D9E5EAA00D70F2D /* 16k_test.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = 16k_test.pcm; sourceTree = "<group>"; };
+		548FBB4E2D9E5F8100D70F2D /* ASRModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASRModule.h; sourceTree = "<group>"; };
+		548FBB4F2D9E5F8100D70F2D /* ASRModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ASRModule.m; sourceTree = "<group>"; };
+		548FBB512D9E60BA00D70F2D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		548FBB532D9E619400D70F2D /* bds_easr_basic_model.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = bds_easr_basic_model.dat; sourceTree = "<group>"; };
+		548FBB552D9E625100D70F2D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		548FBB572D9E62AB00D70F2D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		548FBB592D9E62EB00D70F2D /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		548FBB5B2D9E637D00D70F2D /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		548FBB5D2D9E638D00D70F2D /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		548FBB5F2D9E645E00D70F2D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		548FBB612D9E646800D70F2D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		548FBB632D9E647A00D70F2D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		548FBB652D9E648000D70F2D /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		548FBB672D9E72F600D70F2D /* WakeUp.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = WakeUp.bin; sourceTree = "<group>"; };
+		548FBB692D9E77D500D70F2D /* bds_easr_wakeup_words.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = bds_easr_wakeup_words.dat; sourceTree = "<group>"; };
+		548FBB9F2DA6171500D70F2D /* BDSSpeechSynthesizer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizer.h; sourceTree = "<group>"; };
+		548FBBAB2DA6171500D70F2D /* BDSpeechModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSpeechModule.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.simpleColoring; };
+		548FBBAC2DA6171500D70F2D /* BDSpeechModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDSpeechModule.m; sourceTree = "<group>"; };
+		548FBBB12DA6188F00D70F2D /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		548FBBB32DA61A5C00D70F2D /* BDSSpeechSynthesizerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerDelegate.h; sourceTree = "<group>"; };
+		548FBBB42DA61A9F00D70F2D /* BDSSynthesizerLogLevel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSSynthesizerLogLevel.h; sourceTree = "<group>"; };
+		548FBBB52DA61ABE00D70F2D /* BDSSpeechSynthesizerParams.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerParams.h; sourceTree = "<group>"; };
+		548FBBB62DA61B0600D70F2D /* BDSSpeechSynthesizerErrors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSSpeechSynthesizerErrors.h; sourceTree = "<group>"; };
+		548FBBB72DA643A900D70F2D /* libBaiduSpeechSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduSpeechSDK.a; sourceTree = "<group>"; };
+		548FBBB92DA643D700D70F2D /* libBaiduASRSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduASRSDK.a; sourceTree = "<group>"; };
 		54B5B0572A72110B00E76628 /* CalendarManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CalendarManager.m; path = AwesomeTSProject/CalendarManager.m; sourceTree = "<group>"; };
 		54B5B0592A72112D00E76628 /* CalendarManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CalendarManager.h; path = AwesomeTSProject/CalendarManager.h; sourceTree = "<group>"; };
 		54C5CFF92B3560AD004DE37B /* TXFFmpeg.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TXFFmpeg.xcframework; path = Pods/TXLiteAVSDK_TRTC/TXLiteAVSDK_TRTC/TXFFmpeg.xcframework; sourceTree = "<group>"; };
@@ -66,6 +124,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				548FBBB22DA6188F00D70F2D /* libiconv.tbd in Frameworks */,
+				548FBB662D9E648000D70F2D /* GLKit.framework in Frameworks */,
+				548FBB642D9E647A00D70F2D /* CoreLocation.framework in Frameworks */,
+				548FBBBA2DA643D700D70F2D /* libBaiduASRSDK.a in Frameworks */,
+				548FBB622D9E646800D70F2D /* AVFoundation.framework in Frameworks */,
+				548FBB602D9E645E00D70F2D /* AudioToolbox.framework in Frameworks */,
+				548FBB5E2D9E638D00D70F2D /* libz.1.2.5.tbd in Frameworks */,
+				548FBB5C2D9E637D00D70F2D /* libc++.tbd in Frameworks */,
+				548FBB5A2D9E62EB00D70F2D /* CoreTelephony.framework in Frameworks */,
+				548FBBB82DA643A900D70F2D /* libBaiduSpeechSDK.a in Frameworks */,
+				548FBB582D9E62AB00D70F2D /* SystemConfiguration.framework in Frameworks */,
+				548FBB562D9E625100D70F2D /* CFNetwork.framework in Frameworks */,
+				548FBB522D9E60BA00D70F2D /* libsqlite3.tbd in Frameworks */,
 				54C5CFFC2B3560D4004DE37B /* TXSoundTouch.xcframework in Frameworks */,
 				54C5CFFA2B3560AD004DE37B /* TXFFmpeg.xcframework in Frameworks */,
 				0C80B921A6F3F58F76C31292 /* libPods-AwesomeTSProject.a in Frameworks */,
@@ -110,6 +181,17 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				548FBBB12DA6188F00D70F2D /* libiconv.tbd */,
+				548FBB652D9E648000D70F2D /* GLKit.framework */,
+				548FBB632D9E647A00D70F2D /* CoreLocation.framework */,
+				548FBB612D9E646800D70F2D /* AVFoundation.framework */,
+				548FBB5F2D9E645E00D70F2D /* AudioToolbox.framework */,
+				548FBB5D2D9E638D00D70F2D /* libz.1.2.5.tbd */,
+				548FBB5B2D9E637D00D70F2D /* libc++.tbd */,
+				548FBB592D9E62EB00D70F2D /* CoreTelephony.framework */,
+				548FBB572D9E62AB00D70F2D /* SystemConfiguration.framework */,
+				548FBB552D9E625100D70F2D /* CFNetwork.framework */,
+				548FBB512D9E60BA00D70F2D /* libsqlite3.tbd */,
 				54C5CFFB2B3560D4004DE37B /* TXSoundTouch.xcframework */,
 				54C5CFF92B3560AD004DE37B /* TXFFmpeg.xcframework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
@@ -117,6 +199,111 @@
 				19F6CBCC0A4E27FBF8BF4A61 /* libPods-AwesomeTSProject-AwesomeTSProjectTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		548FBAF52D9E5EAA00D70F2D /* UIHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				548FBAF12D9E5EAA00D70F2D /* BDRecognizerViewController.h */,
+				548FBAF22D9E5EAA00D70F2D /* BDRecognizerViewDelegate.h */,
+				548FBAF32D9E5EAA00D70F2D /* BDRecognizerViewParamsObject.h */,
+				548FBAF42D9E5EAA00D70F2D /* BDTheme.h */,
+			);
+			path = UIHeaders;
+			sourceTree = "<group>";
+		};
+		548FBAFE2D9E5EAA00D70F2D /* ASR */ = {
+			isa = PBXGroup;
+			children = (
+				548FBAF52D9E5EAA00D70F2D /* UIHeaders */,
+				548FBAF72D9E5EAA00D70F2D /* BDSASRDefines.h */,
+				548FBAF82D9E5EAA00D70F2D /* BDSASRParameters.h */,
+				548FBAF92D9E5EAA00D70F2D /* BDSEventManager.h */,
+				548FBAFA2D9E5EAA00D70F2D /* BDSUploaderDefines.h */,
+				548FBAFB2D9E5EAA00D70F2D /* BDSUploaderParameters.h */,
+				548FBAFC2D9E5EAA00D70F2D /* BDSWakeupDefines.h */,
+				548FBAFD2D9E5EAA00D70F2D /* BDSWakeupParameters.h */,
+			);
+			path = ASR;
+			sourceTree = "<group>";
+		};
+		548FBAFF2D9E5EAA00D70F2D /* BDSClientHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				548FBAFE2D9E5EAA00D70F2D /* ASR */,
+			);
+			path = BDSClientHeaders;
+			sourceTree = "<group>";
+		};
+		548FBB022D9E5EAA00D70F2D /* BDSClientLib */ = {
+			isa = PBXGroup;
+			children = (
+				548FBBB92DA643D700D70F2D /* libBaiduASRSDK.a */,
+			);
+			path = BDSClientLib;
+			sourceTree = "<group>";
+		};
+		548FBB172D9E5EAA00D70F2D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				548FBB152D9E5EAA00D70F2D /* 8k_test.pcm */,
+				548FBB162D9E5EAA00D70F2D /* 16k_test.pcm */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		548FBB182D9E5EAA00D70F2D /* ASR */ = {
+			isa = PBXGroup;
+			children = (
+				548FBB692D9E77D500D70F2D /* bds_easr_wakeup_words.dat */,
+				548FBB672D9E72F600D70F2D /* WakeUp.bin */,
+				548FBB532D9E619400D70F2D /* bds_easr_basic_model.dat */,
+				548FBB4E2D9E5F8100D70F2D /* ASRModule.h */,
+				548FBB4F2D9E5F8100D70F2D /* ASRModule.m */,
+				548FBAFF2D9E5EAA00D70F2D /* BDSClientHeaders */,
+				548FBB022D9E5EAA00D70F2D /* BDSClientLib */,
+				548FBB172D9E5EAA00D70F2D /* Resources */,
+			);
+			path = ASR;
+			sourceTree = "<group>";
+		};
+		548FBBA62DA6171500D70F2D /* TTS */ = {
+			isa = PBXGroup;
+			children = (
+				548FBBB62DA61B0600D70F2D /* BDSSpeechSynthesizerErrors.h */,
+				548FBBB52DA61ABE00D70F2D /* BDSSpeechSynthesizerParams.h */,
+				548FBBB42DA61A9F00D70F2D /* BDSSynthesizerLogLevel.h */,
+				548FBBB32DA61A5C00D70F2D /* BDSSpeechSynthesizerDelegate.h */,
+				548FBB9F2DA6171500D70F2D /* BDSSpeechSynthesizer.h */,
+			);
+			path = TTS;
+			sourceTree = "<group>";
+		};
+		548FBBA72DA6171500D70F2D /* BDSClientHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				548FBBA62DA6171500D70F2D /* TTS */,
+			);
+			path = BDSClientHeaders;
+			sourceTree = "<group>";
+		};
+		548FBBAA2DA6171500D70F2D /* BDSClientLib */ = {
+			isa = PBXGroup;
+			children = (
+				548FBBB72DA643A900D70F2D /* libBaiduSpeechSDK.a */,
+			);
+			path = BDSClientLib;
+			sourceTree = "<group>";
+		};
+		548FBBAD2DA6171500D70F2D /* BDSpeech */ = {
+			isa = PBXGroup;
+			children = (
+				548FBBA72DA6171500D70F2D /* BDSClientHeaders */,
+				548FBBAA2DA6171500D70F2D /* BDSClientLib */,
+				548FBBAB2DA6171500D70F2D /* BDSpeechModule.h */,
+				548FBBAC2DA6171500D70F2D /* BDSpeechModule.m */,
+			);
+			path = BDSpeech;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -129,6 +316,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				548FBBAD2DA6171500D70F2D /* BDSpeech */,
+				548FBB182D9E5EAA00D70F2D /* ASR */,
 				13B07FAE1A68108700A75B9A /* AwesomeTSProject */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* AwesomeTSProjectTests */,
@@ -256,6 +445,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				548FBB1B2D9E5EAA00D70F2D /* 16k_test.pcm in Resources */,
+				548FBB542D9E619400D70F2D /* bds_easr_basic_model.dat in Resources */,
+				548FBB6A2D9E77D500D70F2D /* bds_easr_wakeup_words.dat in Resources */,
+				548FBB2B2D9E5EAA00D70F2D /* 8k_test.pcm in Resources */,
+				548FBB682D9E72F600D70F2D /* WakeUp.bin in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,7 +621,9 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				548FBB502D9E5F8100D70F2D /* ASRModule.m in Sources */,
 				54B5B0582A72110B00E76628 /* CalendarManager.m in Sources */,
+				548FBBB02DA6171500D70F2D /* BDSpeechModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +707,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
+					"$(inherited)",
+					"$(PROJECT_DIR)/ASR/BDSClientLib",
+					"$(PROJECT_DIR)/BDSpeech/BDSClientLib",
+				);
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -541,6 +743,12 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SDKROOT)/usr/lib/swift",
+					"$(inherited)",
+					"$(PROJECT_DIR)/ASR/BDSClientLib",
+					"$(PROJECT_DIR)/BDSpeech/BDSClientLib",
 				);
 				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
