@@ -12,7 +12,7 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		548FBB192D9E5EAA00D70F2D /* libBaiduSpeechSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 548FBB012D9E5EAA00D70F2D /* libBaiduSpeechSDK.a */; };
+		548FBB192D9E5EAA00D70F2D /* libBaiduASRSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 548FBB012D9E5EAA00D70F2D /* libBaiduASRSDK.a */; };
 		548FBB1B2D9E5EAA00D70F2D /* 16k_test.pcm in Resources */ = {isa = PBXBuildFile; fileRef = 548FBB162D9E5EAA00D70F2D /* 16k_test.pcm */; };
 		548FBB1C2D9E5EAA00D70F2D /* .gitIgnore in Resources */ = {isa = PBXBuildFile; fileRef = 548FBAF62D9E5EAA00D70F2D /* .gitIgnore */; };
 		548FBB292D9E5EAA00D70F2D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 548FBB002D9E5EAA00D70F2D /* .gitignore */; };
@@ -73,7 +73,7 @@
 		548FBAFC2D9E5EAA00D70F2D /* BDSWakeupDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSWakeupDefines.h; sourceTree = "<group>"; };
 		548FBAFD2D9E5EAA00D70F2D /* BDSWakeupParameters.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDSWakeupParameters.h; sourceTree = "<group>"; };
 		548FBB002D9E5EAA00D70F2D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		548FBB012D9E5EAA00D70F2D /* libBaiduSpeechSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduSpeechSDK.a; sourceTree = "<group>"; };
+		548FBB012D9E5EAA00D70F2D /* libBaiduASRSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduASRSDK.a; sourceTree = "<group>"; };
 		548FBB152D9E5EAA00D70F2D /* 8k_test.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8k_test.pcm; sourceTree = "<group>"; };
 		548FBB162D9E5EAA00D70F2D /* 16k_test.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = 16k_test.pcm; sourceTree = "<group>"; };
 		548FBB4E2D9E5F8100D70F2D /* ASRModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ASRModule.h; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 				548FBB582D9E62AB00D70F2D /* SystemConfiguration.framework in Frameworks */,
 				548FBB562D9E625100D70F2D /* CFNetwork.framework in Frameworks */,
 				548FBB522D9E60BA00D70F2D /* libsqlite3.tbd in Frameworks */,
-				548FBB192D9E5EAA00D70F2D /* libBaiduSpeechSDK.a in Frameworks */,
+				548FBB192D9E5EAA00D70F2D /* libBaiduASRSDK.a in Frameworks */,
 				54C5CFFC2B3560D4004DE37B /* TXSoundTouch.xcframework in Frameworks */,
 				54C5CFFA2B3560AD004DE37B /* TXFFmpeg.xcframework in Frameworks */,
 				0C80B921A6F3F58F76C31292 /* libPods-AwesomeTSProject.a in Frameworks */,
@@ -229,7 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				548FBB002D9E5EAA00D70F2D /* .gitignore */,
-				548FBB012D9E5EAA00D70F2D /* libBaiduSpeechSDK.a */,
+				548FBB012D9E5EAA00D70F2D /* libBaiduASRSDK.a */,
 			);
 			path = BDSClientLib;
 			sourceTree = "<group>";
