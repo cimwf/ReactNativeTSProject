@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
 import { View, Button, NativeModules, NativeEventEmitter } from 'react-native';
 
-export const BAIDU_APP_ID = '117715051';
-export const BAIDU_API_KEY = 'IRw5cHs5X90x7DLMF6eZ65BZ';
-export const BAIDU_SECRET_KEY = 'TNOeiWq0gn20b74kAwlJTlL0PJgFpDyk';
+export const BAIDU_APP_ID = '118480887';
+export const BAIDU_API_KEY = 'ZYaQyjhSAFUdZhik2ZYGvsKz';
+export const BAIDU_SECRET_KEY = 'AvNddaqh6zT9JRTkrO6otdYqDITpVSHI';
 const ASRModuleEmitter = new NativeEventEmitter(NativeModules.ASRModule)
 
 class VoiceRecognition extends Component {
   componentDidMount() {
-    ASRModuleEmitter.addListener('VoiceRecognitionClientWorkStatusChanged', data => {
-      console.log('guanshan-----VoiceRecognitionClientWorkStatusChanged')
-      console.log(data)
+    console.log(123123)
+    NativeModules.ASRModule.init({
+      APP_ID: BAIDU_APP_ID,
+      APP_KEY: BAIDU_API_KEY,
+      SECRET: BAIDU_SECRET_KEY
     })
-    ASRModuleEmitter.addListener('WakeupClientWorkStatusChanged', data => {
+    console.log(NativeModules.ASRModule)
+    ASRModuleEmitter.addListener('onRecognizerResult', data => {
+      console.log('guanshan-----onRecognizerResult')
+      console.log(JSON.stringify(data))
+      console.log(data.code)
+      console.log(data.data)
+    })
+    ASRModuleEmitter.addListener('onWakeUpResult', data => {
       console.log('guanshan-----event')
       console.log(data)
     })
@@ -23,11 +32,15 @@ class VoiceRecognition extends Component {
   };
 
   stopRecognition = () => {
-    NativeModules.ASRModule.startRecognition()
+    NativeModules.ASRModule.stopRecognition()
   };
 
   startWakeUp = () => {
     NativeModules.ASRModule.startWakeUp()
+  }
+
+  stopWakeUp = () => {
+    NativeModules.ASRModule.stopWakeUp()
   }
 
   startSpeech = () => {
@@ -42,6 +55,7 @@ class VoiceRecognition extends Component {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Button title="开始唤醒" onPress={this.startWakeUp} />
+        <Button title="停止唤醒" onPress={this.stopWakeUp} />
         <Button title="开始识别" onPress={this.startRecognition} />
         <Button title="停止识别" onPress={this.stopRecognition} />
         <Button title="开始合成" onPress={this.startSpeech} />

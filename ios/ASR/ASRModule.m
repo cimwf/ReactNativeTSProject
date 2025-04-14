@@ -79,14 +79,14 @@ RCT_EXPORT_METHOD(startWakeUp)
 - (void)WakeupClientWorkStatus:(int)workStatus obj:(id)aObj
 {
   if (aObj) {
-    [self sendEvent:@"WakeupClientWorkStatusChanged" body:@{@"workStatus": @(workStatus), @"data": aObj}.mutableCopy];
+    [self sendEvent:@"onWakeUpResult" body:@{@"workStatus": @(workStatus), @"data": aObj}.mutableCopy];
   }
 }
 
 - (void)VoiceRecognitionClientWorkStatus:(int)workStatus obj:(id)aObj
 {
   if (aObj) {
-    [self sendEvent:@"VoiceRecognitionClientWorkStatusChanged" body:@{@"workStatus": @(workStatus), @"data": aObj}.mutableCopy];
+    [self sendEvent:@"onRecognizerResult" body:@{@"workStatus": @(workStatus), @"data": aObj}.mutableCopy];
   }
 }
 
@@ -101,7 +101,7 @@ RCT_EXPORT_METHOD(startWakeUp)
 
 - (NSArray<NSString *> *)supportedEvents
 {
-    return @[@"VoiceRecognitionClientWorkStatusChanged",@"WakeupClientWorkStatusChanged"];
+    return @[@"onRecognizerResult",@"WakeupClientWorkStatusChanged"];
 }
 
 @end
