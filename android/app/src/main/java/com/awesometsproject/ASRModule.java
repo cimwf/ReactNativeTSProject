@@ -134,8 +134,6 @@ public class ASRModule extends ReactContextBaseJavaModule implements LifecycleEv
      * 开始语音唤醒
      * 唤醒输入参数请参考百度语音文档
      * {@see https://ai.baidu.com/ai-doc/SPEECH/bkh07sd0m#%E5%94%A4%E9%86%92%E8%BE%93%E5%85%A5%E5%8F%82%E6%95%B0}
-     *
-     * @param options 唤醒输入参数
      */
     @ReactMethod
     public void startWakeUp() {
