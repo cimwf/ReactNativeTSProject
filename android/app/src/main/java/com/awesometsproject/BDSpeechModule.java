@@ -59,22 +59,25 @@ public class BDSpeechModule extends ReactContextBaseJavaModule implements Lifecy
     }
 
     @ReactMethod
-    public void init(final ReadableMap options) {
+    public void initModule(final ReadableMap options) {
+        if (synthesizer != null) {
+            return;
+        }
         // 基于DEMO集成第1.1, 1.2, 1.3 步骤 初始化EventManager类并注册自定义输出事件
         if (options.hasKey("APP_ID")) {
             APP_ID = options.getString("APP_ID");
         } else {
             throw new RuntimeException("缺少鉴权信息APP_ID");
         }
-        if (options.hasKey("APP_KEY")) {
-            APP_KEY = options.getString("APP_KEY");
+        if (options.hasKey("API_KEY")) {
+            APP_KEY = options.getString("API_KEY");
         } else {
-            throw new RuntimeException("缺少鉴权信息APP_KEY");
+            throw new RuntimeException("缺少鉴权信息API_KEY");
         }
-        if (options.hasKey("SECRET")) {
-            SECRET = options.getString("SECRET");
+        if (options.hasKey("SECRET_KEY")) {
+            SECRET = options.getString("SECRET_KEY");
         } else {
-            throw new RuntimeException("缺少鉴权信息SECRET");
+            throw new RuntimeException("缺少鉴权信息SECRET_KEY");
         }
         // 设置初始化参数
         // 此处可以改为 含有您业务逻辑的SpeechSynthesizerListener的实现类

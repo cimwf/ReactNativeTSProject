@@ -14,8 +14,5 @@
 #import <React/RCTEventEmitter.h>
 
 @interface ASRModule : RCTEventEmitter <RCTBridgeModule>
-extern NSString *APP_ID;
-extern NSString *API_KEY;
-extern NSString *SECRET_KEY;
 @end
 

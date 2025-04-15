@@ -1,22 +1,37 @@
 import React, { Component } from 'react';
-import { View, Button, NativeModules, NativeEventEmitter } from 'react-native';
+import { View, Button, NativeModules, NativeEventEmitter, Platform } from 'react-native';
 
-export const BAIDU_APP_ID = '118480887';
-export const BAIDU_API_KEY = 'ZYaQyjhSAFUdZhik2ZYGvsKz';
-export const BAIDU_SECRET_KEY = 'AvNddaqh6zT9JRTkrO6otdYqDITpVSHI';
+const APP_ID_ANDROID = '118480887';
+const API_KEY_ANDROID = 'ZYaQyjhSAFUdZhik2ZYGvsKz';
+const SECRET_KEY_ANDROID = 'AvNddaqh6zT9JRTkrO6otdYqDITpVSHI';
+const APP_ID_IOS = '118319132';
+const API_KEY_IOS = 'CO1DRNHb0LMnMCD75HwwvJKu';
+const SECRET_KEY_IOS = 'ZBlfeL2nfDYs1nzoF1sAHoxmzOX38q8a';
+
 const ASRModuleEmitter = new NativeEventEmitter(NativeModules.ASRModule)
 
 class VoiceRecognition extends Component {
   componentDidMount() {
-    NativeModules.ASRModule.init({
-      APP_ID: BAIDU_APP_ID,
-      APP_KEY: BAIDU_API_KEY,
-      SECRET: BAIDU_SECRET_KEY
+    let APP_ID = '', API_KEY = '', SECRET_KEY = ''
+    if (Platform.OS === 'android') {
+      APP_ID = APP_ID_ANDROID
+      API_KEY = API_KEY_ANDROID
+      SECRET_KEY = SECRET_KEY_ANDROID
+    } else {
+      APP_ID = APP_ID_IOS
+      API_KEY = API_KEY_IOS
+      SECRET_KEY = SECRET_KEY_IOS
+    }
+    
+    NativeModules.ASRModule.initModule({
+      APP_ID: APP_ID,
+      API_KEY: API_KEY,
+      SECRET_KEY: SECRET_KEY
     })
-    NativeModules.BDSpeechModule.init({
-      APP_ID: BAIDU_APP_ID,
-      APP_KEY: BAIDU_API_KEY,
-      SECRET: BAIDU_SECRET_KEY
+    NativeModules.BDSpeechModule.initModule({
+      APP_ID: APP_ID,
+      API_KEY: API_KEY,
+      SECRET_KEY: SECRET_KEY
     })
     ASRModuleEmitter.addListener('onRecognizerResult', data => {
       console.log('guanshan-----onRecognizerResult')

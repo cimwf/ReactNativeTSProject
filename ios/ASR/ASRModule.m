@@ -19,11 +19,18 @@
 
 @implementation ASRModule
 
-NSString* APP_ID = @"118319132";
-NSString* API_KEY = @"CO1DRNHb0LMnMCD75HwwvJKu";
-NSString* SECRET_KEY = @"ZBlfeL2nfDYs1nzoF1sAHoxmzOX38q8a";
+NSString* APP_ID = @"";
+NSString* API_KEY = @"";
+NSString* SECRET_KEY = @"";
 
 RCT_EXPORT_MODULE(ASRModule);
+
+RCT_EXPORT_METHOD(initModule: (NSDictionary *) Config)
+{
+  APP_ID = Config[@"APP_ID"];
+  API_KEY = Config[@"API_KEY"];
+  SECRET_KEY = Config[@"SECRET_KEY"];
+}
 
 RCT_EXPORT_METHOD(startRecognition)
 {
@@ -76,6 +83,11 @@ RCT_EXPORT_METHOD(startWakeUp)
   [self.wakeupEventManager sendCommand:BDS_WP_CMD_START];
 }
 
+RCT_EXPORT_METHOD(stopWakeUp)
+{
+  [self.wakeupEventManager sendCommand:BDS_WP_CMD_STOP];
+}
+
 - (void)WakeupClientWorkStatus:(int)workStatus obj:(id)aObj
 {
   if (aObj) {
@@ -101,7 +113,7 @@ RCT_EXPORT_METHOD(startWakeUp)
 
 - (NSArray<NSString *> *)supportedEvents
 {
-    return @[@"onRecognizerResult",@"WakeupClientWorkStatusChanged"];
+    return @[@"onRecognizerResult",@"onWakeUpResult"];
 }
 
 @end
