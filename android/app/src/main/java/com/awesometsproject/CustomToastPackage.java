@@ -23,6 +23,7 @@ public class CustomToastPackage implements ReactPackage {
 
         modules.add(new ToastModule(reactContext));
         modules.add(new ASRModule(reactContext));
+        modules.add(new BDSpeechModule(reactContext));
 
         return modules;
     }

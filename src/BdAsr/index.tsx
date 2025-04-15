@@ -8,13 +8,16 @@ const ASRModuleEmitter = new NativeEventEmitter(NativeModules.ASRModule)
 
 class VoiceRecognition extends Component {
   componentDidMount() {
-    console.log(123123)
     NativeModules.ASRModule.init({
       APP_ID: BAIDU_APP_ID,
       APP_KEY: BAIDU_API_KEY,
       SECRET: BAIDU_SECRET_KEY
     })
-    console.log(NativeModules.ASRModule)
+    NativeModules.BDSpeechModule.init({
+      APP_ID: BAIDU_APP_ID,
+      APP_KEY: BAIDU_API_KEY,
+      SECRET: BAIDU_SECRET_KEY
+    })
     ASRModuleEmitter.addListener('onRecognizerResult', data => {
       console.log('guanshan-----onRecognizerResult')
       console.log(JSON.stringify(data))
@@ -44,7 +47,11 @@ class VoiceRecognition extends Component {
   }
 
   startSpeech = () => {
-    NativeModules.BDSpeechModule.startSpeech()
+    NativeModules.BDSpeechModule.startSpeech('大家好, 哈哈哈哈哈哈哈哈哈哈哈，大家好， 哈哈哈哈哈哈哈哈哈哈哈')
+  }
+
+  batchSpeech = () => {
+    NativeModules.BDSpeechModule.batchSpeech(['123', '大家好', 'abc'])
   }
 
   stopSpeech = () => {
@@ -58,6 +65,7 @@ class VoiceRecognition extends Component {
         <Button title="停止唤醒" onPress={this.stopWakeUp} />
         <Button title="开始识别" onPress={this.startRecognition} />
         <Button title="停止识别" onPress={this.stopRecognition} />
+        <Button title="批量合成" onPress={this.batchSpeech} />
         <Button title="开始合成" onPress={this.startSpeech} />
         <Button title="停止合成" onPress={this.stopSpeech} />
       </View>

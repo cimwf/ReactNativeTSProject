@@ -64,6 +64,10 @@ public class ASRModule extends ReactContextBaseJavaModule implements LifecycleEv
         return "ASRModule";
     }
 
+    public String getAppId(){ return APP_ID; }
+    public String getAppKey(){ return APP_KEY; }
+    public String getSecret(){ return SECRET; }
+
     @Override
     public void onHostResume() {
 
@@ -235,6 +239,7 @@ public class ASRModule extends ReactContextBaseJavaModule implements LifecycleEv
         } else {
             throw new RuntimeException("缺少鉴权信息SECRET");
         }
+
         Log.i(TAG, APP_ID);
         Log.i(TAG, APP_KEY);
         Log.i(TAG, SECRET);
