@@ -35,6 +35,18 @@ RCT_EXPORT_METHOD(startSpeech: (NSString *)str)
   [[BDSSpeechSynthesizer sharedInstance] speakSentence:str withError:&speakError];
 }
 
+RCT_EXPORT_METHOD(batchSpeech: (NSArray *)strArray)
+{
+  [[BDSSpeechSynthesizer sharedInstance] setApiKey:SpeechAPI_KEY withSecretKey:SpeechSECRET_KEY];
+  [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+  [[BDSSpeechSynthesizer sharedInstance] setSynthParam:@(4) forKey:BDS_SYNTHESIZER_PARAM_SPEAKER];
+  [[BDSSpeechSynthesizer sharedInstance] setSynthesizerDelegate:self];
+  // 开始合成并播放
+  NSError* speakError = nil;
+  NSString *combinedString = [strArray componentsJoinedByString:@""];
+  [[BDSSpeechSynthesizer sharedInstance] speakSentence:combinedString withError:&speakError];
+}
+
 RCT_EXPORT_METHOD(stopSpeech)
 {
   [[BDSSpeechSynthesizer sharedInstance] cancel];
