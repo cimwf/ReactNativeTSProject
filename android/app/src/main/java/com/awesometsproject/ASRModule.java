@@ -1,13 +1,8 @@
 package com.awesometsproject;
 
-import static com.baidu.aip.asrwakeup3.core.recog.IStatus.STATUS_ASR_VOLUME;
 import static com.baidu.aip.asrwakeup3.core.recog.IStatus.STATUS_ERROR;
 import static com.baidu.aip.asrwakeup3.core.recog.IStatus.STATUS_FINISHED;
-import static com.baidu.aip.asrwakeup3.core.recog.IStatus.STATUS_LONG_SPEECH_FINISHED;
-import static com.baidu.aip.asrwakeup3.core.recog.IStatus.STATUS_NONE;
-import static com.baidu.aip.asrwakeup3.core.recog.IStatus.STATUS_READY;
 import static com.baidu.aip.asrwakeup3.core.recog.IStatus.STATUS_RECOGNITION;
-import static com.baidu.aip.asrwakeup3.core.recog.IStatus.STATUS_SPEAKING;
 import static com.baidu.aip.asrwakeup3.core.recog.IStatus.STATUS_WAITING_READY;
 import static com.baidu.aip.asrwakeup3.core.recog.IStatus.STATUS_WAKEUP_EXIT;
 import static com.baidu.aip.asrwakeup3.core.recog.IStatus.STATUS_WAKEUP_SUCCESS;
@@ -290,45 +285,54 @@ public class ASRModule extends ReactContextBaseJavaModule implements LifecycleEv
      */
     private void handleMsg(Message msg) {
         WritableMap params = Arguments.createMap();
-        switch (msg.what) { // 处理MessageStatusRecogListener中的状态回调
-            case STATUS_NONE:
-                params.putInt("code", STATUS_NONE);
-                params.putString("msg", "初始状态");
-                break;
-            case STATUS_FINISHED:
-                params.putInt("code", STATUS_FINISHED);
-                params.putString("msg", "识别一段话结束");
-                break;
-            case STATUS_READY:
-                params.putInt("code", STATUS_READY);
-                params.putString("msg", "引擎就绪，可以开始说话");
-                break;
-            case STATUS_SPEAKING:
-                params.putInt("code", STATUS_SPEAKING);
-                params.putString("msg", "检测到用户说话");
-                break;
-            case STATUS_RECOGNITION:
-                params.putInt("code", STATUS_RECOGNITION);
-                params.putString("msg", "检测到用户说话结束");
-                break;
-            case STATUS_LONG_SPEECH_FINISHED:
-                params.putInt("code", STATUS_LONG_SPEECH_FINISHED);
-                params.putString("msg", "长语音识别结束");
-                break;
-            case STATUS_ERROR:
-                params.putInt("code", STATUS_ERROR);
-                params.putString("msg", "语音识别错误");
-            default:
-                break;
+//        switch (msg.what) { // 处理MessageStatusRecogListener中的状态回调
+//            case STATUS_NONE:
+//                params.putInt("code", STATUS_NONE);
+//                params.putString("msg", "初始状态");
+//                break;
+//            case STATUS_FINISHED:
+//                params.putInt("code", STATUS_FINISHED);
+//                params.putString("msg", "识别一段话结束");
+//                break;
+//            case STATUS_READY:
+//                params.putInt("code", STATUS_READY);
+//                params.putString("msg", "引擎就绪，可以开始说话");
+//                break;
+//            case STATUS_SPEAKING:
+//                params.putInt("code", STATUS_SPEAKING);
+//                params.putString("msg", "检测到用户说话");
+//                break;
+//            case STATUS_RECOGNITION:
+//                params.putInt("code", STATUS_RECOGNITION);
+//                params.putString("msg", "检测到用户说话结束");
+//                break;
+//            case STATUS_LONG_SPEECH_FINISHED:
+//                params.putInt("code", STATUS_LONG_SPEECH_FINISHED);
+//                params.putString("msg", "长语音识别结束");
+//                break;
+//            case STATUS_ERROR:
+//                params.putInt("code", STATUS_ERROR);
+//                params.putString("msg", "语音识别错误");
+//            default:
+//                break;
+//        }
+
+        if (msg.what == STATUS_FINISHED) {
+            params.putString("workStatus", "finish");
+            params.putString("data", msg.obj.toString());
+            onJSEvent("onRecognizerResult", params);
+        } else if (msg.what == STATUS_RECOGNITION) {
+            params.putString("data", msg.obj.toString());
+            params.putString("workStatus", "underway");
+            onJSEvent("onRecognizerResult", params);
         }
 
-        if (msg.obj != null) {
-            params.putString("data", msg.obj.toString());
-        } else if (msg.what != STATUS_ASR_VOLUME) {
-            params.putNull("data");
-        }
-        Log.i(TAG, params.toString());
-        onJSEvent("onRecognizerResult", params);
+//        if (msg.obj != null) {
+//            params.putString("data", msg.obj.toString());
+//        } else if (msg.what != STATUS_ASR_VOLUME) {
+//            params.putNull("data");
+//        }
+
     }
 
     private void onJSEvent(String eventName, Object data) {

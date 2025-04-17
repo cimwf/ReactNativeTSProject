@@ -39,16 +39,17 @@ public class MessageStatusRecogListener extends StatusRecogListener {
 
     @Override
     public void onAsrEnd() {
-        super.onAsrEnd();
-        speechEndTime = System.currentTimeMillis();
-        sendMessage("【asr.end事件】检测到用户说话结束");
+//        super.onAsrEnd();
+//        speechEndTime = System.currentTimeMillis();
+//        sendMessage("【asr.end事件】检测到用户说话结束");
     }
 
     @Override
     public void onAsrPartialResult(String[] results, RecogResult recogResult) {
-        sendStatusMessage(SpeechConstant.CALLBACK_EVENT_ASR_PARTIAL,
-                "临时识别结果，结果是“" + results[0] + "”；原始json：" + recogResult.getOrigalJson());
+//        sendStatusMessage(SpeechConstant.CALLBACK_EVENT_ASR_PARTIAL,
+//                "临时识别结果，结果是“" + results[0] + "”；原始json：" + recogResult.getOrigalJson());
         super.onAsrPartialResult(results, recogResult);
+        sendStatusMessage(SpeechConstant.CALLBACK_EVENT_ASR_PARTIAL, results[0]);
     }
 
     @Override
@@ -56,37 +57,37 @@ public class MessageStatusRecogListener extends StatusRecogListener {
         super.onAsrFinalResult(results, recogResult);
         String message = results[0];
 //        sendStatusMessage(SpeechConstant.CALLBACK_EVENT_ASR_PARTIAL, recogResult.getOrigalJson());
+        sendStatusMessage(SpeechConstant.CALLBACK_EVENT_ASR_FINISH, message);
 //        if (speechEndTime > 0) {
 //            long currentTime = System.currentTimeMillis();
 //            long diffTime = currentTime - speechEndTime;
 //            message += "；说话结束到识别结束耗时【" + diffTime + "ms】" + currentTime;
-//
 //        }
-        speechEndTime = 0;
-        sendMessage(message, status, true);
+//        speechEndTime = 0;
+//        sendMessage(message, status, true);
     }
 
     @Override
     public void onAsrFinishError(int errorCode, int subErrorCode, String descMessage,
                                  RecogResult recogResult) {
         super.onAsrFinishError(errorCode, subErrorCode, descMessage, recogResult);
-        String message = "【asr.finish事件】识别错误, 错误码：" + errorCode + " ," + subErrorCode + " ; " + descMessage;
-        sendStatusMessage(SpeechConstant.CALLBACK_EVENT_ASR_PARTIAL, message);
-        if (speechEndTime > 0) {
-            long diffTime = System.currentTimeMillis() - speechEndTime;
-            message += "。说话结束到识别结束耗时【" + diffTime + "ms】";
-        }
-        speechEndTime = 0;
-        sendMessage(message, status, true);
-        speechEndTime = 0;
+//        String message = "【asr.finish事件】识别错误, 错误码：" + errorCode + " ," + subErrorCode + " ; " + descMessage;
+//        sendStatusMessage(SpeechConstant.CALLBACK_EVENT_ASR_PARTIAL, message);
+//        if (speechEndTime > 0) {
+//            long diffTime = System.currentTimeMillis() - speechEndTime;
+//            message += "。说话结束到识别结束耗时【" + diffTime + "ms】";
+//        }
+//        speechEndTime = 0;
+//        sendMessage(message, status, true);
+//        speechEndTime = 0;
     }
 
     @Override
     public void onAsrOnlineNluResult(String nluResult) {
         super.onAsrOnlineNluResult(nluResult);
-        if (!nluResult.isEmpty()) {
-            sendStatusMessage(SpeechConstant.CALLBACK_EVENT_ASR_PARTIAL, "原始语义识别结果json：" + nluResult);
-        }
+//        if (!nluResult.isEmpty()) {
+//            sendStatusMessage(SpeechConstant.CALLBACK_EVENT_ASR_PARTIAL, "原始语义识别结果json：" + nluResult);
+//        }
     }
 
     @Override
@@ -129,7 +130,7 @@ public class MessageStatusRecogListener extends StatusRecogListener {
     }
 
     private void sendStatusMessage(String eventName, String message) {
-        message = "[" + eventName + "]" + message;
+//        message = "[" + eventName + "]" + message;
         sendMessage(message, status);
     }
 
@@ -145,9 +146,9 @@ public class MessageStatusRecogListener extends StatusRecogListener {
     private void sendMessage(String message, int what, boolean highlight) {
 
 
-        if (needTime && what != STATUS_FINISHED) {
-            message += "  ;time=" + System.currentTimeMillis();
-        }
+//        if (needTime && what != STATUS_FINISHED) {
+//            message += "  ;time=" + System.currentTimeMillis();
+//        }
         if (handler == null) {
             Log.i(TAG, message);
             return;
