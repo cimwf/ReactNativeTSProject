@@ -1,5 +1,7 @@
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React, { Component } from 'react';
-import { View, Button, NativeModules, NativeEventEmitter, Platform } from 'react-native';
+import { View, Button, NativeModules, NativeEventEmitter, Platform, Text } from 'react-native';
+import { RootStackParamList } from '../Types/router';
 
 const APP_ID_ANDROID = '118480887';
 const API_KEY_ANDROID = 'ZYaQyjhSAFUdZhik2ZYGvsKz';
@@ -9,8 +11,27 @@ const API_KEY_IOS = 'CO1DRNHb0LMnMCD75HwwvJKu';
 const SECRET_KEY_IOS = 'ZBlfeL2nfDYs1nzoF1sAHoxmzOX38q8a';
 
 const ASRModuleEmitter = new NativeEventEmitter(NativeModules.ASRModule)
+type PropsRoute = NativeStackScreenProps<RootStackParamList, 'BdAsr', 'Stack'>
+type Props = PropsRoute
+type State = {
+  wakeUpTexts: string[]
+  recognitionText: string
+  recognitionTexts: string[]
+}
 
-class VoiceRecognition extends Component {
+const RecognitionStatus = {
+  Underway: 'underway',
+  Finish: 'finish'
+}
+class VoiceRecognition extends Component<Props, State> {
+  constructor(props: Props) {
+    super(props)
+    this.state = {
+      wakeUpTexts: [],
+      recognitionTexts: [],
+      recognitionText: ''
+    }
+  }
   componentDidMount() {
     let APP_ID = '', API_KEY = '', SECRET_KEY = ''
     if (Platform.OS === 'android') {
@@ -35,13 +56,26 @@ class VoiceRecognition extends Component {
     })
     ASRModuleEmitter.addListener('onRecognizerResult', data => {
       console.log('guanshan-----onRecognizerResult')
-      console.log(JSON.stringify(data))
-      console.log(data.code)
-      console.log(data.data)
+      console.log(data)
+      if (data.workStatus === RecognitionStatus.Underway) {
+        this.setState({
+          recognitionText: data.data
+        })
+      } else {
+        this.setState({
+          recognitionTexts: [...this.state.recognitionTexts, data.data],
+          recognitionText: ''
+        })
+      }
+
     })
     ASRModuleEmitter.addListener('onWakeUpResult', data => {
       console.log('guanshan-----event')
       console.log(data)
+      const wakeUpTexts = [...this.state.wakeUpTexts, JSON.stringify(data)]
+      this.setState({
+        wakeUpTexts: wakeUpTexts
+      })
     })
   }
 
@@ -66,11 +100,11 @@ class VoiceRecognition extends Component {
   }
 
   startSpeech = () => {
-    NativeModules.BDSpeechModule.startSpeech('大家好, 哈哈哈哈哈哈哈哈哈哈哈，大家好， 哈哈哈哈哈哈哈哈哈哈哈')
+    NativeModules.BDSpeechModule.startSpeech('先帝创业未半而中道崩殂，今天下三分，益州疲弊，此诚危急存亡之秋也。')
   }
 
   batchSpeech = () => {
-    NativeModules.BDSpeechModule.batchSpeech(['123', '大家好', 'abc'])
+    NativeModules.BDSpeechModule.batchSpeech(['诚宜开张圣听', '以光先帝遗德', '恢弘志士之气', '不宜妄自菲薄', '引喻失义', '以塞忠谏之路也'])
   }
 
   stopSpeech = () => {
@@ -88,6 +122,9 @@ class VoiceRecognition extends Component {
         <Button title="批量合成" onPress={this.batchSpeech} />
         <Button title="开始合成" onPress={this.startSpeech} />
         <Button title="停止合成" onPress={this.stopSpeech} />
+        <Text>识别结果：</Text>
+        {this.state.wakeUpTexts.map((item, index) => <Text key={item + index} >{item}</Text>)}
+        <Text>{this.state.recognitionTexts.join('')}{this.state.recognitionText}</Text>
       </View>
     );
   }

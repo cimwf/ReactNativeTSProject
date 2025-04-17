@@ -112,9 +112,15 @@ RCT_EXPORT_METHOD(startLongSpeech)
 
 - (void)VoiceRecognitionClientWorkStatus:(int)workStatus obj:(id)aObj
 {
-  if (aObj) {
-    [self sendEvent:@"onRecognizerResult" body:@{@"workStatus": @(workStatus), @"data": aObj}.mutableCopy];
+  
+  if (workStatus == EVoiceRecognitionClientWorkStatusFlushData) {
+    [self sendEvent:@"onRecognizerResult" body:@{@"workStatus": @"underway", @"data": aObj[@"results_recognition"][0]}.mutableCopy];
+  } else if (workStatus == EVoiceRecognitionClientWorkStatusFinish) {
+    [self sendEvent:@"onRecognizerResult" body:@{@"workStatus": @"finish", @"data": aObj[@"results_recognition"][0]}.mutableCopy];
   }
+//  if (aObj) {
+//    [self sendEvent:@"onRecognizerResult" body:@{@"workStatus": @(workStatus), @"data": aObj}.mutableCopy];
+//  }
 }
 
 + (BOOL)requiresMainQueueSetup
