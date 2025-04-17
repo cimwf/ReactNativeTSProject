@@ -186,6 +186,21 @@ public class ASRModule extends ReactContextBaseJavaModule implements LifecycleEv
             isListening = true;
         }
     }
+
+    @ReactMethod
+    public void startLongSpeech() {
+        Log.i(TAG, "*******startLongSpeech********");
+        final Map<String, Object> params = new HashMap<>();
+        params.put(SpeechConstant.APP_ID, APP_ID);
+        params.put(SpeechConstant.APP_KEY, APP_KEY);
+        params.put(SpeechConstant.SECRET, SECRET);
+        params.put(SpeechConstant.BDS_ASR_ENABLE_LONG_SPEECH, true);
+
+        if (myRecognizer != null) {
+            myRecognizer.start(params);
+            isListening = true;
+        }
+    }
     /**
      * 开始录音后，手动点击“停止”按钮。
      * SDK会识别不会再识别停止后的录音。
