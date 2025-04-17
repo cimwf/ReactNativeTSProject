@@ -30,22 +30,19 @@ RCT_EXPORT_METHOD(initModule: (NSDictionary *) Config)
   APP_ID = Config[@"APP_ID"];
   API_KEY = Config[@"API_KEY"];
   SECRET_KEY = Config[@"SECRET_KEY"];
+  // 创建语音识别对象
+  self.asrEventManager = [BDSEventManager createEventManagerWithName:BDS_ASR_NAME];
+  // 参数配置：在线身份验证
+  [self.asrEventManager setParameter:@[API_KEY, SECRET_KEY] forKey:BDS_ASR_API_SECRET_KEYS];
+  //设置 APPID
+  [self.asrEventManager setParameter:APP_ID forKey:BDS_ASR_OFFLINE_APP_CODE];
+  [self configModelVAD];
 }
 
 RCT_EXPORT_METHOD(startRecognition)
 {
   NSLog(@"guanshan-----Start");
-  // 创建语音识别对象
-  self.asrEventManager = [BDSEventManager createEventManagerWithName:BDS_ASR_NAME];
-  // 设置语音识别代理
-  [self.asrEventManager setDelegate:self];
-  [self configModelVAD];
-  // 参数配置：在线身份验证
-  [self.asrEventManager setParameter:@[API_KEY, SECRET_KEY] forKey:BDS_ASR_API_SECRET_KEYS];
-  //设置 APPID
-  [self.asrEventManager setParameter:APP_ID forKey:BDS_ASR_OFFLINE_APP_CODE];
-  // 发送指令：启动识别
-  [self.asrEventManager sendCommand:BDS_ASR_CMD_START];
+  [self voiceRecogButtonHelper];
 }
 
 - (void)configModelVAD {
@@ -86,6 +83,24 @@ RCT_EXPORT_METHOD(startWakeUp)
 RCT_EXPORT_METHOD(stopWakeUp)
 {
   [self.wakeupEventManager sendCommand:BDS_WP_CMD_STOP];
+}
+
+RCT_EXPORT_METHOD(startLongSpeech)
+{
+  [self.asrEventManager setParameter:@(NO) forKey:BDS_ASR_NEED_CACHE_AUDIO];
+  [self.asrEventManager setParameter:@"" forKey:BDS_ASR_OFFLINE_ENGINE_TRIGGERED_WAKEUP_WORD];
+  [self.asrEventManager setParameter:@(YES) forKey:BDS_ASR_ENABLE_LONG_SPEECH];
+  // 长语音请务必开启本地VAD
+  [self.asrEventManager setParameter:@(YES) forKey:BDS_ASR_ENABLE_LOCAL_VAD];
+  [self voiceRecogButtonHelper];
+}
+
+- (void)voiceRecogButtonHelper
+{
+    [self.asrEventManager setDelegate:self];
+    [self.asrEventManager setParameter:nil forKey:BDS_ASR_AUDIO_FILE_PATH];
+    [self.asrEventManager setParameter:nil forKey:BDS_ASR_AUDIO_INPUT_STREAM];
+    [self.asrEventManager sendCommand:BDS_ASR_CMD_START];
 }
 
 - (void)WakeupClientWorkStatus:(int)workStatus obj:(id)aObj

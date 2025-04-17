@@ -49,6 +49,10 @@ class VoiceRecognition extends Component {
     NativeModules.ASRModule.startRecognition()
   };
 
+  startLongSpeech = () => {
+    NativeModules.ASRModule.startLongSpeech()
+  };
+
   stopRecognition = () => {
     NativeModules.ASRModule.stopRecognition()
   };
@@ -79,6 +83,7 @@ class VoiceRecognition extends Component {
         <Button title="开始唤醒" onPress={this.startWakeUp} />
         <Button title="停止唤醒" onPress={this.stopWakeUp} />
         <Button title="开始识别" onPress={this.startRecognition} />
+        <Button title="长语音识别" onPress={this.startLongSpeech} />
         <Button title="停止识别" onPress={this.stopRecognition} />
         <Button title="批量合成" onPress={this.batchSpeech} />
         <Button title="开始合成" onPress={this.startSpeech} />
