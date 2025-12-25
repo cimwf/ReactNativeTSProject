@@ -27,6 +27,7 @@ export type RootStackParamList = {
   IMView: NavigateParams
   SafetyKeyboard: NavigateParams
   BdAsr: NavigateParams
+  RenderHtml: NavigateParams
 }
 
 export type IMStackParamList = {
